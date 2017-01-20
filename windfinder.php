@@ -1,0 +1,1 @@
+<div style="font-size:1.0em;"><script type="text/javascript" language="JavaScript" src="http://www.windfinder.com/wind-cgi/homepageforecast.pl?STATIONSNR=de693&UNIT_WIND=kmh&UNIT_TEMPERATURE=c&VERSION=2&UNIT_WAVE=m&UNIT_RAIN=mm&NUM_COLS=2&NUM_DAYS=3&SHOW_DAY=1&LANG=de&SHOW_WAVE=0"></script></div>
