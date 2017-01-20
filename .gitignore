@@ -22,3 +22,6 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 
 
+*~
+.swp
+.swo
