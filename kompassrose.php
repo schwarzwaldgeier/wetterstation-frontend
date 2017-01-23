@@ -23,10 +23,10 @@ document.getElementById("refresh").content="60; URL=http://schwarzwaldgeier.de/_
 
 
 $query       = "SELECT * from weather_merkur2 order by uid desc LIMIT 1";
-    $void        = mysql_select_db($db);
-    $result      = mysql_query($query);
-    $anzkomplett = @mysql_num_rows($result);
-	$data = mysql_fetch_assoc($result);
+  
+    $result      = mysqli_query($connection, $query);
+    $anzkomplett = @mysqli_num_rows($result);
+	$data = mysqli_fetch_assoc($result);
 	
 	
 	
@@ -35,10 +35,10 @@ function WindDirectionNormalName ($direction)
 	
 	$d = $direction;
 	$sectorSize = 22.5;
-	
+	//TODO get rid of the else if stuff by using mod and math.floor
 	//N
 	if (($d >= 360-1*($sectorSize/2) && $d<=360) 
-			|| //360er-Übertrag
+			|| //360er-Uebertrag
 			($d>=0 && $d< 1*($sectorSize/2)) 
 		)
 		$w = "Nord";
