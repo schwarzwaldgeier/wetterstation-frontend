@@ -33,7 +33,7 @@ function last_records($rcount, $connection) {
     	$x = $anzkomplett - 1;
     	for ($i=0; $i < $anzkomplett; $i++) {
     		$void = mysqli_data_seek($result, $i);
-    		$array = mysqli_fetch_array($result, MYSQL_ASSOC);
+    		$array = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$datay[$x] = round($array["wind_speed"],0);
 			if ($array["max_speed"] < 1) {
 				$boe = 0;
@@ -87,7 +87,7 @@ $graph->SetMargin(30,30,50,70);
 //$graph->img->SetImgFormat('jpg');
 
 
-last_records(200);
+last_records(200, $connection);
 
 
 //$graph->SetBackgroundImage("pix/merkur4.jpg",BGIMG_FILLPLOT);
