@@ -39,7 +39,7 @@ if (eregi('\=Mozilla\/5\.0 .*', $_SERVER["USER_AGENT"])) {
 	if(!(empty($_GET["sdate"]))) { $sdate = $_GET["sdate"]; } else { $sdate = date("Y-m-d"); }
 
 
- function last_records($rcount) {
+ function last_records($rcount, $connection) {
 		global $datax;
 		global $datay;
 		global $maxspeed;
@@ -50,13 +50,13 @@ if (eregi('\=Mozilla\/5\.0 .*', $_SERVER["USER_AGENT"])) {
 
 		$maxspeed = 0;
     	$query = "SELECT * from weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
-    	$void = mysql_select_db($db);
-    	$result = mysql_query($query);
-    	$anzkomplett = @mysql_num_rows($result);
+    //	$void = mysqli_select_db($db);
+    	$result = mysqli_query($connection, $query);
+    	$anzkomplett = @mysqli_num_rows($result);
     	$x = $anzkomplett - 1;
     	for ($i=0; $i < $anzkomplett; $i++) {
-    		$void = mysql_data_seek($result, $i);
-    		$array = mysql_fetch_array($result, MYSQL_ASSOC);
+    		$void = mysqli_data_seek($result, $i);
+    		$array = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$datay[$x] = round($array["wind_direction"],0);
 //			if ($array["wind_speed"] > $maxspeed) { $maxspeed = $array["wind_speed"]; }
     		$datax[$x] = $array["tstamp"];
@@ -69,7 +69,7 @@ if (eregi('\=Mozilla\/5\.0 .*', $_SERVER["USER_AGENT"])) {
 include ($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/jpgraph/src/jpgraph.php");
 include ($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/jpgraph/src/jpgraph_scatter.php");
 include ($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/jpgraph/src/jpgraph_plotline.php");
-last_records(200);
+last_records(200, $connection);
 
 
 // The callback that converts timestamp to minutes and seconds
