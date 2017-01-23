@@ -12,7 +12,7 @@
 
 
 
-function last_records($rcount) {
+function last_records($rcount, $connection) {
 		global $datax;
 		global $datay;
 		global $maxspeed;
@@ -24,13 +24,13 @@ function last_records($rcount) {
 		$maxspeed = 0;
 		$minspeed = 2000;
     	$query = "SELECT * from weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
-    	$void = mysql_select_db($db);
-    	$result = mysql_query($query);
-    	$anzkomplett = @mysql_num_rows($result);
+    	$void = mysqli_select_db($db);
+    	$result = mysqli_query($connection, $query);
+    	$anzkomplett = @mysqli_num_rows($result);
     	$x = $anzkomplett - 1;
     	for ($i=0; $i < $anzkomplett; $i++) {
-    		$void = mysql_data_seek($result, $i);
-    		$array = mysql_fetch_array($result, MYSQL_ASSOC);
+    		$void = mysqli_data_seek($result, $i);
+    		$array = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$datay[$x] = $array["pressure"];
 			if ($array["pressure"] > $maxspeed) { $maxspeed = $array["pressure"]; }
 			if ($array["pressure"] < $minspeed) { $minspeed = $array["pressure"]; }
@@ -77,7 +77,7 @@ $graph = new Graph(540,344,"auto",3);
 $graph->SetMargin(50,10,50,70);
 
 
-last_records(200);
+last_records(200, $connection);
 
 //$graph->SetBackgroundImage("pix/baro.jpg",BGIMG_FILLPLOT);
 //$graph->AdjBackgroundImage(0,0);
