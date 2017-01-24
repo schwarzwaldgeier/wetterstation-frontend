@@ -83,7 +83,7 @@ $graph->SetMargin(30,10,50,70);
 
 
 
-$graph->SetBackgroundImage("http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_direction.png",BGIMG_FILLPLOT);
+$graph->SetBackgroundImage("typo_direction.png",BGIMG_FILLPLOT);
 //$graph->AdjBackgroundImage(0,0);
 $graph->img->SetAntiAliasing("white");
 
