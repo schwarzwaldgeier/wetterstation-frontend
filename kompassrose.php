@@ -154,7 +154,7 @@ function WindDirectionNormalName ($direction)
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
 
 	<image x="0" y="0" width="640px" height="480px"
-    xlink:href="http://www.schwarzwaldgeier.de/_extphp/startplaetze.jpg">
+    xlink:href="https://www.schwarzwaldgeier.de/_extphp/startplaetze.jpg">
     <title>Startplaetze</title>
   </image>
     <text

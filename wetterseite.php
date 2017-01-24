@@ -50,7 +50,7 @@ if ($_COOKIE["gei"] != "ichbineingeier") {
 
 
 <!--
-<link rel="stylesheet" href="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_cal.css" type="text/css" />
+<link rel="stylesheet" href="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_cal.css" type="text/css" />
 -->
 
 <?php
@@ -101,8 +101,8 @@ if (!(empty($_GET["sdate"]))) {
 					var dateText3 = $.datepicker.formatDate("yy-mm-dd", date, inst.settings);
 					
 				
-					$("#dateoutput").html(" --&gt; <a href=\""+  "http://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate=" +dateText3+ "\">Bitte klicken, falls nicht automatisch weitergeleitet wird.</a>");
-					window.location.href = "http://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate="+dateText3;
+					$("#dateoutput").html(" --&gt; <a href=\""+  "https://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate=" +dateText3+ "\">Bitte klicken, falls nicht automatisch weitergeleitet wird.</a>");
+					window.location.href = "https://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate="+dateText3;
 					
 					
 					
@@ -277,7 +277,7 @@ echo "<br />";
 ?>
 
 
-<img width="540" alt="Windgeschwindigkeits-Messung Wetterstation Merkur" src="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-speed.php?sdate=<?php
+<img width="540" alt="Windgeschwindigkeits-Messung Wetterstation Merkur" src="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-speed.php?sdate=<?php
 echo $sdate;
 ?><?php
 echo $vereist;
@@ -285,14 +285,14 @@ echo $vereist;
 <br>
 <br>
 <!--
-<img width="540" alt="Windrichtungs-Messung Wetterstation Merkur" style="background-image: url('http://i.imgur.com/prajpXN.png'); opacity:0.5; float: left;" src="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-direction.php?sdate=<?php
+<img width="540" alt="Windrichtungs-Messung Wetterstation Merkur" style="background-image: url('http://i.imgur.com/prajpXN.png'); opacity:0.5; float: left;" src="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-direction.php?sdate=<?php
 echo $sdate;
 ?><?php
 echo $vereist;
 ?>" />
 -->
 <div style="position: relative; top: 0; left: 0; z-index: -1;">
-  <img src="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-direction.php?sdate=<?php
+  <img src="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-direction.php?sdate=<?php
 echo $sdate;
 ?><?php
 echo $vereist;
@@ -305,13 +305,13 @@ echo $vereist;
 <!--
 <br>
 <br>
-<img width="540" height="344" alt="Temperatur-Messung Wetterstation Merkur" src="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-temp.php?sdate=<?php
+<img width="540" height="344" alt="Temperatur-Messung Wetterstation Merkur" src="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-temp.php?sdate=<?php
 echo $sdate;
 ?>">
 -->
 <br>
 <br>
-<img width="540" height="344" alt="Luftdruck-Messung Wetterstation Merkur" src="http://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-press.php?sdate=<?php
+<img width="540" height="344" alt="Luftdruck-Messung Wetterstation Merkur" src="https://www.schwarzwaldgeier.de/_extphp/wetterstation/typo_w-press.php?sdate=<?php
 echo $sdate;
 ?>">
 <br>

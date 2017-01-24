@@ -2,6 +2,6 @@
 /_extphp/wetterstation/** files
 
 
-master branch == http://gsv-baden.de/wetterstation-merkur
+master branch == https://www.schwarzwaldgeier.de/wetterstation-merkur
 
 Git pull needs to be done manually so far.
