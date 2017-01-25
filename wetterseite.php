@@ -101,8 +101,8 @@ if (!(empty($_GET["sdate"]))) {
 					var dateText3 = $.datepicker.formatDate("yy-mm-dd", date, inst.settings);
 					
 				
-					$("#dateoutput").html(" --&gt; <a href=\""+  "https://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate=" +dateText3+ "\">Bitte klicken, falls nicht automatisch weitergeleitet wird.</a>");
-					window.location.href = "https://www.schwarzwaldgeier.de/wetterstation-merkur/?p=22&sdate="+dateText3;
+					$("#dateoutput").html(" --&gt; <a href=\""+  "/wetterstation-merkur&sdate=" +dateText3+ "\">Bitte klicken, falls nicht automatisch weitergeleitet wird.</a>");
+					window.location.href = "/wetterstation-merkur?sdate="+dateText3;
 					
 					
 					
