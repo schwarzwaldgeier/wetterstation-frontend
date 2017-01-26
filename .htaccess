@@ -1,0 +1,7 @@
+# Stop unauthorized hotlinking
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?schwarzwaldgeier.de [NC]
+RewriteRule \.(php)$ http://i.imgur.com/rpnyrI0.jpg [NC,R,L]
+
