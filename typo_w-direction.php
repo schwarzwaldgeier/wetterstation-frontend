@@ -1,33 +1,4 @@
 <?php
-
-
-if($_GET["eis"] == "da") {
-    header('Content-Type: image/jpeg');
-    $imageFile = imagecreatefromjpeg($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/pix/eis2.jpg");
-    imagejpeg($imageFile);
-    imagedestroy($imageFile);
-    exit;
-}
-/*
-if($_COOKIE["gei"] != "ichbineingeier") {
-    header('Content-Type: image/jpeg');
-    $imageFile = imagecreatefromjpeg($_SERVER["DOCUMENT_ROOT"]."/front.jpg");
-    imagejpeg($imageFile);
-    imagedestroy($imageFile);
-    exit;
-}
-
-if (eregi('\=Mozilla\/5\.0 .*', $_SERVER["USER_AGENT"])) {
-    header('Content-Type: image/jpeg');
-    $imageFile = imagecreatefromjpeg($_SERVER["DOCUMENT_ROOT"]."/front.jpg");
-    imagejpeg($imageFile);
-    imagedestroy($imageFile);
-    exit;
-}
-
-*/
-?>
-<?php
 	$anzkomplett = 0;
 
     @require_once($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/parse_request.inc.php");

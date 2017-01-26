@@ -24,7 +24,7 @@ function last_records($rcount, $connection) {
 		$maxspeed = 0;
 		$minspeed = 2000;
     	$query = "SELECT * from weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
-    	$void = mysqli_select_db($db);
+    
     	$result = mysqli_query($connection, $query);
     	$anzkomplett = @mysqli_num_rows($result);
     	$x = $anzkomplett - 1;
