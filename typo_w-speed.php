@@ -1,11 +1,11 @@
 <?php
-if($_GET["eis"] == "da") {
-    header('Content-Type: image/jpeg');
-    $imageFile = imagecreatefromjpeg($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/pix/eis3.jpg");
-    imagejpeg($imageFile);
-    imagedestroy($imageFile);
-    exit;
-}
+
+
+
+
+
+
+
 	$anzkomplett = 0;
 
     @require_once($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/parse_request.inc.php");
@@ -35,14 +35,14 @@ function last_records($rcount, $connection) {
     		$void = mysqli_data_seek($result, $i);
     		$array = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$datay[$x] = round($array["wind_speed"],0);
-		//	if ($array["max_speed"] < 1) {
-		//		$boe = 0;
-		//	} else {
-				$boe = $array["max_speed"];
-		//	}
+			if ($array["wind_maxspeed"] < 1) {
+				$boe = 0;
+			} else {
+			$boe = $array["wind_maxspeed"];
+			}
 			$datay2[$x] = round($boe,0);
 			if ($array["wind_speed"] > $maxspeed) { $maxspeed = $array["wind_speed"]; }
-			if ($array["max_speed"] > $maxspeed) { $maxspeed = $array["max_speed"]; }
+			if ($array["wind_maxspeed"] > $maxspeed) { $maxspeed = $array["wind_maxspeed"]; }
     		$datax[$x] = $array["tstamp"];
     		if($i == 0) { $wend = $array["tstamp"]; }
     		$wbeg = $array["tstamp"];
