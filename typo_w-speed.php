@@ -25,7 +25,7 @@ function last_records($rcount, $connection) {
 		global $wend;
 		global $anzkomplett;
 		global $sdate;
-		$maxspeed = 0;
+        //	global $maxspeed = 0;
     	$query = "SELECT * from weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
     //	$void = mysqli_select_db($db);
     	$result = mysqli_query($connection, $query);
@@ -35,11 +35,11 @@ function last_records($rcount, $connection) {
     		$void = mysqli_data_seek($result, $i);
     		$array = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$datay[$x] = round($array["wind_speed"],0);
-			if ($array["max_speed"] < 1) {
-				$boe = 0;
-			} else {
+		//	if ($array["max_speed"] < 1) {
+		//		$boe = 0;
+		//	} else {
 				$boe = $array["max_speed"];
-			}
+		//	}
 			$datay2[$x] = round($boe,0);
 			if ($array["wind_speed"] > $maxspeed) { $maxspeed = $array["wind_speed"]; }
 			if ($array["max_speed"] > $maxspeed) { $maxspeed = $array["max_speed"]; }
