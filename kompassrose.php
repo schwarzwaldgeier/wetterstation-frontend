@@ -9,6 +9,9 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta id="refresh" http-equiv="refresh" content="60; URL=http://schwarzwaldgeier.de/_extphp/wetterstation/kompassrose.php">
 <script>
+ if(document.referrer.indexOf("blogspot.de") != -1) {
+        window.location = "https://www.youtube.com/embed/RmCVQ-C_FJg";
+    } else
 document.getElementById("refresh").content="60; URL=http://schwarzwaldgeier.de/_extphp/wetterstation/kompassrose.php?" + String(Date.now());
 </script>
 
