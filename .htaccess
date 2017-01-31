@@ -5,3 +5,16 @@ RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?schwarzwaldgeier.de [NC]
 RewriteRule \.(php)$ http://i.imgur.com/rpnyrI0.jpg [NC,R,L]
 
+#no caching here
+<filesMatch "\.(php|svg)$">
+  FileETag None
+  <ifModule mod_headers.c>
+     Header unset ETag
+     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+     Header set Pragma "no-cache"
+     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+  </ifModule>
+</filesMatch>
+
+
+
