@@ -54,42 +54,42 @@ echo "20.0 "; //23 inside temp
 echo "50 "; // 25 inside humidity
 out("wind_chill", $d);
 echo "+0.0 "; //26 TODO temperature trend value TODO
-out("temperature", $d); //TODO high temp
+out("temperature", $d); //27 TODO high temp
 
-echo $now->format('H:m')." "; //time hightemp
+echo $now->format('H:m')." "; //28 time hightemp
 
 
-out("temperature", $d); //tody lowtemp
-echo $now->format('H:m')." "; //lowtemp time
-out("wind_maxspeed", $d); //today high wind speed avg
-echo $now->format('H:m')." "; 
-out("wind_maxspeed", $d); //today high gust
-echo $now->format('H:m')." "; 
-echo "1024.25 "; //today high pressure
-echo $now->format('H:m')." "; 
-echo "1024.25 "; //today low pressure
-echo $now->format('H:m')." "; 
-echo "1.8.7 "; //cumulus fake version
-echo "819 "; //cunumulus fake build number
+out("temperature", $d); //29 tody lowtemp
+echo $now->format('H:m')." "; //30 lowtemp time
+out("wind_maxspeed", $d); //31 today high wind speed avg
+echo $now->format('H:m')." ";  //32
+out("wind_maxspeed", $d); //33 today high gust 
+echo $now->format('H:m')." "; //34
+echo "1024.25 "; //35 today high pressure
+echo $now->format('H:m')." "; //36
+echo "1024.25 "; //37 today low pressure
+echo $now->format('H:m')." ";  //38
+echo "1.8.7 "; //39 cumulus fake version
+echo "819 "; //40 cunumulus fake build number
 
-out("wind_maxspeed", $d); //10 min high gust
-echo "0 "; //heat index
-echo "0 "; //humidex
-echo "0 "; //UV index
-echo "0 "; //evapowhatever
-echo "0 "; //solar rad
-out("wind_direction", $d); //10min avg wind bearing
-echo "0 "; //rainfall last hour
-echo "0 "; //number of current whatever forecast
-echo "1 "; //daylight yes no
-echo "0 "; //connection lost?
+out("wind_maxspeed", $d); //41 10 min high gust
+echo "0 "; //42 heat index
+echo "0 "; //43 humidex
+echo "0 "; //44 UV index
+echo "0 "; //45 evapowhatever
+echo "0 "; //46 solar rad
+out("wind_direction", $d); //47 10min avg wind bearing
+echo "0 "; //48 rainfall last hour
+echo "0 "; //49 number of current whatever forecast
+echo "1 "; //50 daylight yes no
+echo "0 "; //51 connection lost?
 
-echo(WindDirectionNormalName($d["wind_direction"] ) )." "; //compass point
-echo "1700 ";//cloud base
-echo "m "; //cloud base units
-out ("temperature", $d); //apparent temperature
-echo "1 "; //sunshine hours today so far
-echo "420.1 "; // max radiation or so
+echo(WindDirectionNormalName($d["wind_direction"] ) )." "; //52 avg wind dir TODO
+echo "1700 ";//53 cloud base
+echo "m "; //54 cloud base units
+out ("temperature", $d); //55 apparent temperature
+echo "1 "; //56 sunshine hours today so far
+echo "420.1 "; //57 max radiation or so
 
 
 echo "1"; //is the sun shining?
@@ -109,27 +109,27 @@ function WindDirectionNormalName ($direction)
 		$w = "N";
 	//NNO
 	else if ($d>=1*($sectorSize/2) && $d< 3*($sectorSize/2)) 
-		$w = "NNO";
+		$w = "NNE";
 	
 	//NO
 	else if ($d>=3*($sectorSize/2) && $d< 5*($sectorSize/2)) 
-		$w = "NO";
+		$w = "NE";
 	
 	//ONO
 	else if ($d>=5*($sectorSize/2) && $d< 7*($sectorSize/2)) 
-		$w = "ONO";
+		$w = "ENE";
 	//O
 	else if ($d>=7*($sectorSize/2) && $d< 9*($sectorSize/2)) 
-		$w = "O";
+		$w = "E";
 	//OSO
 	else if ($d>=9*($sectorSize/2) && $d< 11*($sectorSize/2)) 
-		$w = "OSO";
+		$w = "ESE";
 	//SO
 	else if ($d>=11*($sectorSize/2) && $d< 13*($sectorSize/2)) 
-		$w = "SO";
+		$w = "SE";
 	//SSO
 	else if ($d>=13*($sectorSize/2) && $d< 15*($sectorSize/2)) 
-		$w = "SSO";
+		$w = "SSE";
 	//S
 	else if ($d>=15*($sectorSize/2) && $d< 17*($sectorSize/2)) 
 		$w = "S";
