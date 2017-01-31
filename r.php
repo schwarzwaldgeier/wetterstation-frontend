@@ -29,11 +29,9 @@ out("humidity", $d);    //4. relative humidity
 echo ("0 "); //5. dew point
 
 
-$query_aws = "SELECT AVG(a.wind_speed) AS ws_avg FROM (SELECT wind_speed FROM weather_merkur2 ORDER BY tstamp DESC LIMIT 10) a;";
-$r_aws = mysqli_query($connection, $query_aws);
-$d_aws = mysqli_fetch_assoc($r_aws);
-out("ws_avg", $d_aws); //6. avg wind speed
-out("wind_speed", $d); //7. latest wind speed reading
+
+out("wind_speed", $d_aws); //6. avg wind speed
+out("windspeed_max", $d); //7. latest wind speed reading
 out("wind_direction", $d); //8. wind bearing
 
 echo "0.0 "; // 9. current rain rate
