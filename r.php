@@ -30,8 +30,8 @@ echo ("0 "); //5. dew point
 
 
 
-out("wind_speed", $d_aws); //6. avg wind speed
-out("windspeed_max", $d); //7. latest wind speed reading
+out("wind_speed", $d); //6. avg wind speed
+out("wind_maxspeed", $d);  //7. latest wind speed reading
 out("wind_direction", $d); //8. wind bearing
 
 echo "0.0 "; // 9. current rain rate
