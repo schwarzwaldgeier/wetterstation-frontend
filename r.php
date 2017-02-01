@@ -30,8 +30,8 @@ echo ("0 "); //5. dew point
 
 
 
-out("wind_speed", $d); //6. avg wind speed
-out("wind_maxspeed", $d);  //7. latest wind speed reading
+out("original_wind_speed", $d); //6. avg wind speed
+out("original_wind_maxspeed", $d);  //7. latest wind speed reading
 out("wind_direction", $d); //8. wind bearing
 
 echo "0.0 "; // 9. current rain rate
@@ -59,9 +59,9 @@ echo $now->format('H:m')." "; //28 time hightemp
 
 out("temperature", $d); //29 tody lowtemp
 echo $now->format('H:m')." "; //30 lowtemp time
-out("wind_maxspeed", $d); //31 today high wind speed avg
+out("original_wind_maxspeed", $d); //31 today high wind speed avg
 echo $now->format('H:m')." ";  //32
-out("wind_maxspeed", $d); //33 today high gust 
+out("original_wind_maxspeed", $d); //33 today high gust 
 echo $now->format('H:m')." "; //34
 echo "1024.25 "; //35 today high pressure
 echo $now->format('H:m')." "; //36
@@ -70,7 +70,7 @@ echo $now->format('H:m')." ";  //38
 echo "1.8.7 "; //39 cumulus fake version
 echo "819 "; //40 cunumulus fake build number
 
-out("wind_maxspeed", $d); //41 10 min high gust
+out("original_wind_maxspeed", $d); //41 10 min high gust
 echo "0 "; //42 heat index
 echo "0 "; //43 humidex
 echo "0 "; //44 UV index
