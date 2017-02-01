@@ -13,15 +13,17 @@ $r      = mysqli_query($connection, $query);
 //$anzkomplett = @mysqli_num_rows($result);
 $d = mysqli_fetch_assoc($r);
 
+
 function out($field, $data)
 {
 	echo $data[$field]." ";
 
 }
 //out("record_datetime", $d);
-$now = new DateTime(); 
-echo $now->format('d/m/Y')." "; //1. day
-echo $now->format('H:m:s')." "; //2. time
+//$now = new DateTime(); 
+
+echo date('d/m/Y', $data['record_datetime'])." ";//1. day
+echo date('H:m:s', $data['record_datetime'])." "; //2. time
 
 
 out("temperature", $d); //3. outside temperature
@@ -54,19 +56,19 @@ out("wind_chill", $d);
 echo "+0.0 "; //26 TODO temperature trend value TODO
 out("temperature", $d); //27 TODO high temp
 
-echo $now->format('H:m')." "; //28 time hightemp
+echo date('H:m', $data['record_datetime'])." "; //28 time hightemp
 
 
 out("temperature", $d); //29 tody lowtemp
-echo $now->format('H:m')." "; //30 lowtemp time
+echo date('H:m', $data['record_datetime'])." "; //30 lowtemp time
 out("original_wind_maxspeed", $d); //31 today high wind speed avg
-echo $now->format('H:m')." ";  //32
+echo date('H:m', $data['record_datetime'])." ";  //32
 out("original_wind_maxspeed", $d); //33 today high gust 
-echo $now->format('H:m')." "; //34
+echo date('H:m', $data['record_datetime'])." "; //34
 echo "1024.25 "; //35 today high pressure
-echo $now->format('H:m')." "; //36
+echo date('H:m', $data['record_datetime'])." "; //36
 echo "1024.25 "; //37 today low pressure
-echo $now->format('H:m')." ";  //38
+echo date('H:m', $data['record_datetime'])." ";  //38
 echo "1.8.7 "; //39 cumulus fake version
 echo "819 "; //40 cunumulus fake build number
 
