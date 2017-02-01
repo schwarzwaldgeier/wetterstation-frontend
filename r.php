@@ -24,7 +24,7 @@ function out($field, $data)
 
 echo date('d/m/Y', $d['tstamp'])." ";//1. day
 
-echo date('H:m:s', $d['tstamp'])." "; //2. time
+echo date('H:i:s', $d['tstamp'])." "; //2. time
 
 
 out("temperature", $d); //3. outside temperature
@@ -57,19 +57,19 @@ out("wind_chill", $d);
 echo "+0.0 "; //26 TODO temperature trend value TODO
 out("temperature", $d); //27 TODO high temp
 
-echo date('H:m', $d['tstamp'])." "; //28 time hightemp
+echo date('H:i', $d['tstamp'])." "; //28 time hightemp
 
 
 out("temperature", $d); //29 tody lowtemp
-echo date('H:m', $d['tstamp'])." "; //30 lowtemp time
+echo date('H:i', $d['tstamp'])." "; //30 lowtemp time
 out("original_wind_maxspeed", $d); //31 today high wind speed avg
-echo date('H:m', $d['tstamp'])." ";  //32
+echo date('H:i', $d['tstamp'])." ";  //32
 out("original_wind_maxspeed", $d); //33 today high gust 
-echo date('H:m', $d['tstamp'])." "; //34
+echo date('H:i', $d['tstamp'])." "; //34
 echo "1024.25 "; //35 today high pressure
-echo date('H:m', $d['tstamp'])." "; //36
+echo date('H:i', $d['tstamp'])." "; //36
 echo "1024.25 "; //37 today low pressure
-echo date('H:m', $d['tstamp'])." ";  //38
+echo date('H:i', $d['tstamp'])." ";  //38
 echo "1.8.7 "; //39 cumulus fake version
 echo "819 "; //40 cunumulus fake build number
 
