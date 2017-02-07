@@ -6,6 +6,9 @@
 <script src="/_extphp/wetterstation/highcharts/code/highcharts-more.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/modules/data.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/modules/exporting.js"></script>
+
+</head>
+<body>
 <script type="text/javascript">
 // Parse the data from an inline table using the Highcharts Data plugin
 Highcharts.chart('container', {
@@ -73,9 +76,6 @@ Highcharts.chart('container', {
                  }
                  });
 </script>
-
-</head>
-<body>
 
 
 <div style="display:initial">
