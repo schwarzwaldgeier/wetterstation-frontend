@@ -77,9 +77,8 @@ Highcharts.chart('container', {
 </head>
 <body>
 
-<div id="container" style="min-width: 420px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 
-<div style="display:none">
+<div style="display:initial">
 <!-- Source: http://or.water.usgs.gov/cgi-bin/grapher/graph_windrose.pl -->
 <table id="freq" border="0" cellspacing="0" cellpadding="0">
 <tr nowrap bgcolor="#CCCCFF">
@@ -285,5 +284,7 @@ Highcharts.chart('container', {
 </tr>
 </table>
 </div>
+<div id="container" style="min-width: 420px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+
 </body>
 </html>
