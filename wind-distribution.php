@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 <head>
+<script src="/jquery-3.1.1.min.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/highcharts.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/highcharts-more.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/modules/data.js"></script>
 <script src="/_extphp/wetterstation/highcharts/code/modules/exporting.js"></script>
-<script type="text/javascript>
+<script type="text/javascript">
 // Parse the data from an inline table using the Highcharts Data plugin
 Highcharts.chart('container', {
                  data: {
