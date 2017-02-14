@@ -25,7 +25,7 @@ document.getElementById("refresh").content="60; URL=http://schwarzwaldgeier.de/_
 @require_once($_SERVER["DOCUMENT_ROOT"] . "/_extphp/wetterstation/inc/php_mysql.php");
 
 
-$query       = "SELECT * from weather_merkur2 order by uid desc LIMIT 1";
+$query       = "SELECT * from wp_weather_merkur2 order by uid desc LIMIT 1";
   
     $result      = mysqli_query($connection, $query);
     $anzkomplett = @mysqli_num_rows($result);

@@ -400,7 +400,7 @@ function last_records($connection,  $rcount)
 
 
     <?php
-    $query       = "SELECT * from weather_merkur2 order by uid desc LIMIT $rcount";
+    $query       = "SELECT * from wp_weather_merkur2 order by uid desc LIMIT $rcount";
    // $void        = mysqli_select_db($db);
     $result      = mysqli_query($connection, $query);
     $anzkomplett = @mysqli_num_rows($result);
@@ -532,8 +532,8 @@ function data_avg($mins, $connection)
     $wd_v        = 0;
     $wd_w        = 0;
     $mytime      = time() - $mins * 60;
-    #$query = "SELECT avg(wind_speed) as wind_speed,avg(wind_direction) as wind_direction from weather_merkur2 where tstamp > $mytime limit 1";
-    $query       = "SELECT wind_speed, wind_direction, temperature, pressure, wind_maxspeed from weather_merkur2 where tstamp > $mytime";
+    #$query = "SELECT avg(wind_speed) as wind_speed,avg(wind_direction) as wind_direction from wp_weather_merkur2 where tstamp > $mytime limit 1";
+    $query       = "SELECT wind_speed, wind_direction, temperature, pressure, wind_maxspeed from wp_weather_merkur2 where tstamp > $mytime";
 //    $void        = mysqli_select_db($db);
     $result      = mysqli_query($connection, $query);
     $anzkomplett = @mysqli_num_rows($result);
@@ -630,7 +630,7 @@ function rawdata_avg($mins, $connection)
     $wd_v         = 0;
     $wd_w         = 0;
     $mytime       = time() - $mins * 60;
-    $query        = "SELECT min(wind_speed) mis, max(wind_speed)mas, min(wind_direction) mid, max(wind_direction) mad from weather_merkur2 where tstamp > $mytime";
+    $query        = "SELECT min(wind_speed) mis, max(wind_speed)mas, min(wind_direction) mid, max(wind_direction) mad from wp_weather_merkur2 where tstamp > $mytime";
   
    // $mysqli = mysqli
   //  $void         = mysqli_select_db('wetter');
