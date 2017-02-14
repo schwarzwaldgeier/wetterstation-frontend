@@ -20,7 +20,7 @@ function last_records($rcount) {
 		global $anzkomplett;
 		global $sdate;
 		$maxspeed = 0;
-    	$query = "SELECT * from weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
+    	$query = "SELECT * from wp_weather_merkur2 where record_datetime like '".$sdate."%' order by uid desc";
     	$void = mysql_select_db($db);
     	$result = mysql_query($query);
     	$anzkomplett = @mysql_num_rows($result);

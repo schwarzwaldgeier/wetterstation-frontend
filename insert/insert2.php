@@ -16,7 +16,7 @@ if(strlen($_GET["wc"])<1) { $error .= "no windchill. "; $error = 1; }
 if(strlen($_GET["hu"])<1) { $error .= "no humidity. "; $error = 1; }
 if(empty($error)) {
 	@require_once($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/php_mysql.php");
-	$query = "INSERT INTO weather_merkur2 (record_datetime,tstamp,wind_direction,wind_speed, original_wind_speed, temperature,pressure, wind_maxspeed, original_wind_maxspeed, humidity,wind_chill) values ('".date("Y-m-d H:i:s")."',".time().",".$_GET["wd"].",".$_GET["ws"].",".$_GET["ows"].",".$_GET["te"].",".$_GET["pr"].",".$_GET["ms"]."," . $_GET["oms"] . ", "  . $_GET["hu"] . "," . $_GET["wc"] . ")";
+	$query = "INSERT INTO wp_weather_merkur2 (record_datetime,tstamp,wind_direction,wind_speed, original_wind_speed, temperature,pressure, wind_maxspeed, original_wind_maxspeed, humidity,wind_chill) values ('".date("Y-m-d H:i:s")."',".time().",".$_GET["wd"].",".$_GET["ws"].",".$_GET["ows"].",".$_GET["te"].",".$_GET["pr"].",".$_GET["ms"]."," . $_GET["oms"] . ", "  . $_GET["hu"] . "," . $_GET["wc"] . ")";
 /*	$void = mysql_select_db($db);
 	if ($void != 1) {
 		$error = 1;
