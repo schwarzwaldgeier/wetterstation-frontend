@@ -1,5 +1,6 @@
 <?php
 	$anzkomplett = 0;
+	date_default_timezone_set("Europe/Berlin");
 
     @require_once($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/parse_request.inc.php");
 	@require_once($_SERVER["DOCUMENT_ROOT"]."/_extphp/wetterstation/inc/php_mysql.php");

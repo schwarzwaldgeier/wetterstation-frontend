@@ -23,37 +23,32 @@ if(empty($error)) {
 		$error .= "could not select database $db !!!!";
 	} */
 
-	$mysqli = new mysqli("localhost", "wetter", "jTRUu%!rgmTXdB#vq", "wetter");
-	$mysqli_wordpress = new mysqli("localhost", "root", "iosfh83d", "wordpress");
-	$query = "INSERT INTO wp_weather_merkur2 (record_datetime,tstamp,wind_direction,wind_speed, original_wind_speed, temperature,pressure, wind_maxspeed, original_wind_maxspeed, humidity,wind_chill) values ('".date("Y-m-d H:i:s")."',".time().",".$_GET["wd"].",".$_GET["ws"].",".$_GET["ows"].",".$_GET["te"].",".$_GET["pr"].",".$_GET["ms"]."," . $_GET["oms"] . ", "  . $_GET["hu"] . "," . $_GET["wc"] . ")";
+
+//	$mysqli_wordpress = new mysqli("localhost", "root", "iosfh83d", "wordpress");
+//	$query = "INSERT INTO wp_weather_merkur2 (record_datetime,tstamp,wind_direction,wind_speed, original_wind_speed, temperature,pressure, wind_maxspeed, original_wind_maxspeed, humidity,wind_chill) values ('".date("Y-m-d H:i:s")."',".time().",".$_GET["wd"].",".$_GET["ws"].",".$_GET["ows"].",".$_GET["te"].",".$_GET["pr"].",".$_GET["ms"]."," . $_GET["oms"] . ", "  . $_GET["hu"] . "," . $_GET["wc"] . ")";
 
 
 
-	$result = mysqli_query($mysqli, $query);
-	if ($result != 1) {
+	$result = mysqli_query($connection, $query);
+	if ($result != 1)
+	{
 		$error = 1;
-		$error .= "could not issue sql-statement ($query) !!!!";
+		$error .= "could not issue sql-statement ($query)";
+	} 
+	
+	else 
+	{
+		print "ERROR: $error";
 	}
-} else {
-	print "ERROR: $error";
-}
-if(empty($error)) {
-	echo "ThatWasGood";
-} else {
-	echo "ERROR: $error";
-}
-	$result = mysqli_query($mysqli_wordpress, $query);
-	if ($result != 1) {
-		$error = 1;
-		$error .= "could not issue sql-statement ($query) !!!!";
-	} else {
-	print "ERROR: $error";
-}
-if(empty($error)) {
-	echo "ThatWasGood";
-} else {
-	echo "ERROR: $error";
-}
+	if(empty($error)) 
+	{
+		echo "ThatWasGood";
+	} 
+	
+	else 
+	{
+		echo "ERROR: $error";
+	}
 
-
+}
 ?>

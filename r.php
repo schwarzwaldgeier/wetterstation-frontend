@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 @require_once($_SERVER["DOCUMENT_ROOT"] . "/_extphp/wetterstation/inc/php_mysql.php");
 //@require_once($_SERVER["DOCUMENT_ROOT"] . "/_extphp/wetterstation/inc/funktionen_wetterseite.php");
 
-$query       = "SELECT * from weather_merkur2 order by uid desc LIMIT 1";
+$query       = "SELECT * from wp_weather_merkur2 order by uid desc LIMIT 1";
   
 $r      = mysqli_query($connection, $query);
 //$anzkomplett = @mysqli_num_rows($result);
