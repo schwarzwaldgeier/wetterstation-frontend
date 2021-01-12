@@ -15,7 +15,7 @@ date_default_timezone_set("Europe/Berlin");
 	if(!(empty($_GET["rec_count"]))) { $rec_count = $_GET["rec_count"]; } else { $rec_count = 10; }
 	if(!(empty($_GET["avg_hours"]))) { $avg_hours = $_GET["avg_hours"]; } else { $avg_hours = 1; }
 
-	if(!(empty($_GET["sdate"]))) { $sdate = $_GET["sdate"]; } else { $sdate = date("Y-m-d"); }
+	if(!(empty($_GET["sdate"])) && preg_match("/^\d{4}-(0\d|1[0-2])-(0\d|1\d|2\d|3[01])$/s", $_GET["sdate"])) { $sdate = $_GET["sdate"]; } else { $sdate = date("Y-m-d"); }
 
 function last_records($rcount, $connection) {
 		global $datax;
