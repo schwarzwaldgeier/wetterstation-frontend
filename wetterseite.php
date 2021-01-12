@@ -69,7 +69,7 @@ if (!(empty($_GET["avg_hours"]))) {
 } else {
     $avg_hours = 2;
 }
-if (!(empty($_GET["sdate"]))) {
+if (!(empty($_GET["sdate"])) && preg_match("/^\d{4}-(0\d|1[0-2])-(0\d|1\d|2\d|3[01])$/s", $_GET["sdate"])) {
     $sdate = $_GET["sdate"];
 } else {
     $sdate = date("Y-m-d");
