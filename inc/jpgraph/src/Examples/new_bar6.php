@@ -96,7 +96,7 @@ $band->ShowFrame(true);
 $band->SetOrder(DEPTH_BACK);
 $graph->Add($band);
 
-$graph->title->Set("Combineed Line and Bar plots");
+$graph->title->Set("Combined Line and Bar plots");
 
 // Display the graph
 $graph->Stroke();

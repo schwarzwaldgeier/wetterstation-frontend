@@ -61,7 +61,7 @@ for($i=0; $i<count($data); ++$i) {
         $bar->rightMark->SetWidth(10);
 
         // Title for the mark
-        $bar->rightMark->title->Set("".$i+1);
+        $bar->rightMark->title->Set("".($i+1));
         $bar->rightMark->title->SetColor("white");
         $bar->rightMark->title->SetFont(FF_ARIAL,FS_BOLD,10);
         $bar->rightMark->Show();
