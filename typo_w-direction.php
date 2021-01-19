@@ -86,7 +86,12 @@ $graph->xaxis->SetLabelAngle(90);
 // Create the line
 $p1 = new ScatterPlot($datay,$datax);
 
+// Add horizontal lines to display the allowed window
+$west_line = new PlotLine(HORIZONTAL, 22.5*11.5, 'lightgreen', 2*22.5);
+$northost_line = new PlotLine(HORIZONTAL, 22.5*2, 'lightgreen', 22.5);
 
+$graph->Add($west_line);
+$graph->Add($northost_line);
 
 //$p1 = new LinePlot($datay,$datax);
 //$p1->SetColor("#1FE55C");
